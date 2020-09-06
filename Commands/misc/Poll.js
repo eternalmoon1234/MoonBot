@@ -1,4 +1,4 @@
-const { MessageEmbed, Message, Discord, Client } = require('discord.js')
+const { MessageEmbed, Message, Client } = require('discord.js')
 const UtilityEmbed = require('../../utils/UtilityEmbeds')
 const { prefix } = require('../../config.json')
 
