@@ -41,7 +41,7 @@ class BotClient extends Client {
             if (message.author.bot) {
                 return;
             }
-
+        
             //Variable for args
             const args = message.content.slice(prefix.length).trim().split(/ +/)
             const lower = args.shift().toLowerCase()
