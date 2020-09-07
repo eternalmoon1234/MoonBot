@@ -11,6 +11,7 @@
   "license": "ISC",
   "dependencies": {
     "discord.js": "^12.3.1",
+    "ez-date-module": "^1.0.0",
     "random-puppy": "^1.1.0"
   },
   "devDependencies": {
