@@ -25,6 +25,15 @@ module.exports = {
             )
         }
 
+        if (!message.guild.me.hasPermission('MANAGE_CHANNELS')) {
+            return (
+                message.channel.send(UtilityEmbeds.errEmbed(
+                    "I dont have the permission to set the slowmode!",
+                    `Triggered by ${message.author.tag}`
+                ))
+            )
+        }
+
         if (!args[0]) {
             return (
                 message.channel.send(UtilityEmbeds.errEmbed(

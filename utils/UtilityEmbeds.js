@@ -6,9 +6,9 @@ class UtilityEmbeds {
 
     }
     
-    errEmbed(description, footer) {
+    errEmbed(description, footer, title) {
         const errorEmbed = new MessageEmbed()
-        errorEmbed.setTitle('❌ Error! ❌')
+        errorEmbed.setTitle('❌ Error! ❌' || title)
         errorEmbed.setDescription(description)
         errorEmbed.setColor('ff0000')
         errorEmbed.setFooter(footer)
@@ -18,9 +18,9 @@ class UtilityEmbeds {
         )
     } 
 
-    successEmbed(description, footer) {
+    successEmbed(description, footer, title) {
         const success = new MessageEmbed()
-        success.setTitle('✅ Success! ✅')
+        success.setTitle('✅ Success! ✅' || title)
         success.setDescription(description)
         success.setColor('4FE324')
         success.setFooter(footer)
