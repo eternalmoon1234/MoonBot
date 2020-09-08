@@ -26,6 +26,15 @@ module.exports = {
             )
         }
 
+        if (!message.guild.me.hasPermission('MANAGE_MESSAGES')) {
+            return (
+                message.channel.send(UtilityEmbeds.errEmbed(
+                    'I dont have the permission to clear messages!',
+                    `Triggered by ${message.author.tag}`
+                ))
+            )
+        }
+
         if (!args[0]) {
             return (
                 message.channel.send(UtilityEmbeds.errEmbed(
