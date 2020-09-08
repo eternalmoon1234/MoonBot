@@ -21,7 +21,7 @@ class BotClient extends Client {
             this.fs.readdirSync(`./Commands/${directory}/`).map((cmd) => {
                 let CMD = require(`../Commands/${directory}/${cmd}`)
                 console.log(`Command ${CMD.name} loaded`)
-
+                
                 this.commands.set(CMD.name, CMD)
             })
         })

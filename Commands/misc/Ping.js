@@ -5,6 +5,7 @@ module.exports = {
     name: 'ping',
     description: 'returns the websocket ping, and message edit ping',
     category: 'misc',
+    aliases: ['pong'],
 
     //IntelliSense
     /**
