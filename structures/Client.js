@@ -1,5 +1,6 @@
 const { Collection, Client } = require('discord.js')
 const { token, prefix } = require('../config.json')
+const db = require('quick.db')
 
 class BotClient extends Client {
     constructor() {
@@ -7,7 +8,7 @@ class BotClient extends Client {
 
         //Create Collection data structures
         this.commands = new Collection()
-        this.aliases = new Collection()
+        this.structures = new Collection()
 
         //Require Modules
         this.fs = require('fs')
