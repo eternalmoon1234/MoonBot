@@ -17,8 +17,8 @@ class BotClient extends Client {
 
     //Functions of the class
     commandHandler() {
-        this.fs.readdirSync('./Commands').map((directory) => {
-            this.fs.readdirSync(`./Commands/${directory}/`).map((cmd) => {
+        this.fs.readdirSync('./Commands').map((directory: any) => {
+            this.fs.readdirSync(`./Commands/${directory}/`).map((cmd: any) => {
                 let CMD = require(`../Commands/${directory}/${cmd}`)
                 console.log(`Command ${CMD.name} loaded`)
                 
@@ -36,7 +36,7 @@ class BotClient extends Client {
         })
 
         //Message event listener
-        this.on('message', async(message) => {
+        this.on('message', async(message: any) => {
             //If the message comes from another bot, then return
             if (message.author.bot || !message.content.startsWith(prefix)) {
                 return;
