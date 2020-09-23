@@ -1,6 +1,5 @@
 const { Collection, Client } = require('discord.js')
 const { token, prefix } = require('../config.json')
-const db = require('quick.db')
 
 class BotClient extends Client {
     constructor() {
