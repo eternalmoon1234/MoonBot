@@ -1,6 +1,6 @@
 const { MessageEmbed, Message } = require("discord.js")
 const Client = require('../../structures/Client')
-
+const client = new Client()
 module.exports = {
     name: 'avatar',
     description: 'returns the avatar',
@@ -15,7 +15,7 @@ module.exports = {
 
     run: async(client, message, args) => {
         let mentioneduser = message.mentions.users.first()
-
+        
         //Your avatar
         if (!mentioneduser) {
             const youravatar = new MessageEmbed()
@@ -32,5 +32,6 @@ module.exports = {
             mentionavatar.setFooter(`Requested by ${message.author.tag}`)
             message.channel.send(mentionavatar)
         }
+        
     }
 }
