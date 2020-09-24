@@ -17,7 +17,7 @@ module.exports = {
     run: async (client, message, args) => {
         //Create an instance of the UtilityEmbed Class
         const UtilEmbeds = new UtilityEmbed()
-        
+        client.ws.pi
         //Error Handlers
         if (!message.member.hasPermission('ADMINISTRATOR')) {
             return (

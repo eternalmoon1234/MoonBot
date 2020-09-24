@@ -22,7 +22,6 @@ class Calc {
 
             run: async (client, message, args) => {
                 const UtilityEmbeds = new UtilityEmbed()
-
                 //Error handlers
                 if (!args[0]) {
                     return (
