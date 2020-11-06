@@ -1,60 +1,60 @@
-const { Collection, Client } = require('discord.js')
-const { token, prefix } = require('../config.json')
+const { Collection, Client } = require("discord.js");
+const { token, prefix } = require("../config.json");
 
 class BotClient extends Client {
-    constructor() {
-        super()
+  constructor() {
+    super();
 
-        //Create Collection data structures
-        this.commands = new Collection()
-        this.structures = new Collection()
+    //Create Collection data structures
+    this.commands = new Collection();
+    this.structures = new Collection();
 
-        //Require Modules
-        this.fs = require('fs')
-        this.Discord = require('discord.js')
-        this.path = require('path')
-    }
+    //Require Modules
+    this.fs = require("fs");
+    this.Discord = require("discord.js");
+    this.path = require("path");
+  }
 
-    //Functions of the class
-    static commandHandler() {
-        this.fs.readdirSync('./Commands').map((directory) => {
-            this.fs.readdirSync(`./Commands/${directory}/`).map((cmd) => {
-                let CMD = require(`../Commands/${directory}/${cmd}`)
-                console.log(`Command ${CMD.name} loaded`)
-                
-                this.commands.set(CMD.name, CMD)
-            })
-        })
-    }
+  //Functions of the class
+  commandHandler() {
+    this.fs.readdirSync("./Commands").map((directory) => {
+      this.fs.readdirSync(`./Commands/${directory}/`).map((cmd) => {
+        let CMD = require(`../Commands/${directory}/${cmd}`);
+        console.log(`Command ${CMD.name} loaded`);
 
-    static initBot() {
-        this.commandHandler()
-        //Ready event listener
-        this.on('ready', async () => {
-            console.log(`Client connected as ${this.user.tag}`)
-        })
+        this.commands.set(CMD.name, CMD);
+      });
+    });
+  }
 
-        //Message event listener
-        this.on('message', async(message) => {
-            //If the message comes from another bot, then return
-            if (message.author.bot || !message.content.startsWith(prefix)) {
-                return;
-            }
-            //Variable for args
-            const args = message.content.slice(prefix.length).trim().split(/ +/)
-            const lower = args.shift().toLowerCase()
+  initBot() {
+    this.commandHandler();
+    //Ready event listener
+    this.on("ready", async () => {
+      console.log(`Client connected as ${this.user.tag}`);
+    });
 
-            //Navigate the collection, get, and run
-            if (this.commands.has(lower)) {
-                const commandFiles = this.commands.get(lower)
-                //Run files in directories
-                commandFiles.run(this, message, args)
-            }
-        })
+    //Message event listener
+    this.on("message", async (message) => {
+      //If the message comes from another bot, then return
+      if (message.author.bot || !message.content.startsWith(prefix)) {
+        return;
+      }
+      //Variable for args
+      const args = message.content.slice(prefix.length).trim().split(/ +/);
+      const lower = args.shift().toLowerCase();
 
-        //Login
-        this.login(token)
-    }
+      //Navigate the collection, get, and run
+      if (this.commands.has(lower)) {
+        const commandFiles = this.commands.get(lower);
+        //Run files in directories
+        commandFiles.run(this, message, args);
+      }
+    });
+
+    //Login
+    this.login(token);
+  }
 }
 
 //Export the class
