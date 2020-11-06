@@ -1,36 +1,25 @@
 //An Object-Oriented utility class for holding key embeds, that will be used over and over again
-const { MessageEmbed, Message, Client, } = require('discord.js')
-
+const { MessageEmbed } = require("discord.js");
 class UtilityEmbeds {
-    constructor() {
+  errEmbed(description, footer) {
+    const errorEmbed = new MessageEmbed();
+    errorEmbed.setTitle("❌ Error! ❌");
+    errorEmbed.setDescription(description);
+    errorEmbed.setColor("ff0000");
+    errorEmbed.setFooter(footer);
 
-    }
-    
-    errEmbed(description, footer, title) {
-        const errorEmbed = new MessageEmbed()
-        errorEmbed.setTitle('❌ Error! ❌' || title)
-        errorEmbed.setDescription(description)
-        errorEmbed.setColor('ff0000')
-        errorEmbed.setFooter(footer)
+    return errorEmbed;
+  }
 
-        return (
-            errorEmbed
-        )
-    } 
+  successEmbed(description, footer) {
+    const success = new MessageEmbed();
+    success.setTitle("✅ Success! ✅");
+    success.setDescription(description);
+    success.setColor("4FE324");
+    success.setFooter(footer);
 
-    successEmbed(description, footer, title) {
-        const success = new MessageEmbed()
-        success.setTitle('✅ Success! ✅' || title)
-        success.setDescription(description)
-        success.setColor('4FE324')
-        success.setFooter(footer)
-
-        return (
-            success
-        )
-    }
+    return success;
+  }
 }
 
 module.exports = UtilityEmbeds;
-
-
