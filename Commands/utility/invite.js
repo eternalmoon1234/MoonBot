@@ -3,7 +3,7 @@ const Client = require("../../structures/Client");
 const UtilityEmbed = require("../../utils/UtilityEmbeds");
 
 module.exports = {
-  name: "help",
+  name: "invite",
   description: "the help cmd that returns all commands",
   category: "utils",
 
