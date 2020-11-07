@@ -108,7 +108,7 @@ module.exports = {
       {
         name: "Still Got Problems?",
         value:
-          "If the bot still doesn't DM you, or you get any problems, please join our support server at https://discord.com/invite/supportserver",
+          "If the bot still doesn't DM you, or you get any problems, please join our support server at https://discord.gg/7WmnZDxU",
       }
     );
     servermessage.setColor("6107F5");
