@@ -16,7 +16,7 @@ module.exports = {
   run: async (client, message, args) => {
     //Init my utilityembeds class
     const UtilityEmbeds = new UtilityEmbed();
-    const help = new Discord.MessageEmbed();
+    const help = new MessageEmbed();
     help.setTitle("✉️ Help ✉️");
     help.setDescription("You requested help. Here are all the commands.");
     help.setColor("6107F5");
@@ -63,7 +63,7 @@ module.exports = {
     });
     help.setFooter(`Help requested by ${message.author.tag}`);
     message.author.send(help);
-    const servermessage = new Discord.MessageEmbed();
+    const servermessage = new MessageEmbed();
     servermessage.setTitle("✉️ Help Sent! ✉️");
     servermessage.setDescription("A help message was sent to your DMs.");
     servermessage.addField("Was No Message Sent?", "**Common Problems:**");
