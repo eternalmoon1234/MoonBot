@@ -6,7 +6,9 @@
   "scripts": {
     "compile": "tsc",
     "start": "node index.js",
-    "dev": "nodemon index.js"
+    "dev": "nodemon index.js",
+    "deploy": "git push heroku master",
+    "push": "git push"
   },
   "keywords": [],
   "author": "",
