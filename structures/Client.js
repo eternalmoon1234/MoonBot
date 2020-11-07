@@ -53,7 +53,7 @@ class BotClient extends Client {
     });
 
     //Login
-    this.login(token);
+    this.login(process.env.token);
   }
 }
 
