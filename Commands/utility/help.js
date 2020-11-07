@@ -23,18 +23,14 @@ module.exports = {
     help.addFields(
       {
         name: "🏓 Ping Command 🏓",
-        value: "**Command: >ping** | Gives the bot's latency",
+        value:
+          "**Command: >ping** | Gives the bot's latency, and the Discord API ping",
         inline: true,
       },
       {
         name: "🎱 8ball Command 🎱",
-        value: "**Command: >ping** |",
-        inline: true,
-      },
-      {
-        name: "💬 Speak Command 💬",
         value:
-          "**Command: >speak** | Get the bot to speak whatever you want it to! The words after the command are what the bot will say!",
+          "**Command: >8ball <question>** | Ask the 8ball anything you want!",
         inline: true,
       },
       {
@@ -44,23 +40,54 @@ module.exports = {
         inline: true,
       },
       {
-        name: "💰 Flip 💰",
+        name: "🖼️ Avatar Command 🖼️",
         value:
-          "**Command: >flip** | Returns either heads or tails, like a coin toss.",
+          "**Command: >avatar <user>** | Returns your avatar, and you can also find someone else's avatar by mentioning them.",
         inline: true,
       },
       {
-        name: "🖼️ Avatar Command 🖼️",
+        name: "🧮 Calculator Command 🧮",
+        value: "**Command** >calc <equation> | Calculates your math equations",
+        inline: true,
+      },
+      {
+        name: "✉️ Invite Command ✉️",
+        value: "**Command** >invite | Provides the bot's invite link",
+        inline: true,
+      },
+      {
+        name: "ℹ️ Userinfo Command ℹ️",
         value:
-          "**Command: >avatar (Optional Mention Arguments)** | Returns your avatar, and you can also find someone else's avatar by mentioning them.",
+          "**Command** >userinfo <user> | Provides the information of a mentioned user",
+        inline: true,
+      },
+      {
+        name: "🤣 Meme Command 🤣",
+        value: "**Command** >meme | Fetches a meme from a random subreddit",
         inline: true,
       }
     );
-    help.addFields({
-      name: "📝 Poll Command 📝",
-      value:
-        "**Admin Command: >poll** | Makes an embed for a poll and reacts with a thumbsup and thumbsdown.",
-    });
+    help.addFields(
+      {
+        name: "📝 Poll Command 📝",
+        value:
+          "**Admin Command: >poll <channel> <content>** | Makes an embed for a poll and reacts with a thumbsup and thumbsdown.",
+      },
+      {
+        name: "🐢 Slowmode Command 🐢",
+        value:
+          "**Admin Command: >slowmode <seconds>** | Sets the slowmode of the channel in seconds",
+      },
+      {
+        name: "👋 Kick Command 👋",
+        value: "**Admin Command: >kick <user>** | Kicks the mentioned user",
+      },
+      {
+        name: "🗑️ Clear Command 🗑️",
+        value:
+          "**Admin Command: >clear <>** | Clears the requested amount of messages",
+      }
+    );
     help.setFooter(`Help requested by ${message.author.tag}`);
     message.author.send(help);
     const servermessage = new MessageEmbed();

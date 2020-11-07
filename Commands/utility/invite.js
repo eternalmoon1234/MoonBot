@@ -22,7 +22,9 @@ module.exports = {
     invite.setDescription(
       "Click the link above to invite me into your server!"
     );
-    invite.setURL("https://www.google.com"); //temporary link
+    invite.setURL(
+      "https://discord.com/api/oauth2/authorize?client_id=737093877256683639&permissions=2147352311&scope=bot"
+    ); //temporary link
     invite.setColor("00FF00");
     invite.setFooter(`Requested by ${message.author.tag}`);
     message.channel.send(invite);

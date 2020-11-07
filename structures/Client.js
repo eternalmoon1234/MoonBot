@@ -32,6 +32,7 @@ class BotClient extends Client {
     //Ready event listener
     this.on("ready", async () => {
       console.log(`Client connected as ${this.user.tag}`);
+      this.user.setActivity(">help, >invite", { type: "PLAYING" });
     });
 
     //Message event listener
